@@ -57,11 +57,17 @@ temporary value pending your putting in appropriate ones.)
 
 module Math : MATH =
   struct
-    let pi = nan
-    let cos _ = nan
-    let sin _ = nan
-    let sum _ _ = nan
-    let max _ = None
+    let pi = 4.0 *. atan 1.0 
+    let cos (x : float) : float =
+      cos x  
+    let sin (x : float) : float = 
+      sin x 
+    let sum (x : float) (y : float) : float = 
+      x +. y
+    let max (lst : float list) : float option = 
+      match lst with 
+      | [] -> None
+      | _ -> Some (List.fold_left max min_float lst)  
   end ;;
 
 (*......................................................................
@@ -71,12 +77,13 @@ type float option. Name the resulting value `result`. (Use explicit
 module prefixes for this exercise, not global or local opens.)
 ......................................................................*)
 
-let result = Some nan ;;
+let result = Some (Math.max [Math.cos Math.pi; Math.sin Math.pi]) ;;
 
 (*......................................................................
 Exercise 1C: Reimplement the computation from 1B above, now as
 `result_local_open`, but using a local open to write your computation
 in a more succinct manner.
 ......................................................................*)
+open Math ;;
 
-let result_local_open = Some nan ;;
+let result_local_open = Some (max [cos pi; sin pi]) ;;
