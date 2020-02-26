@@ -103,9 +103,9 @@ open Stack ;;
 
 let sample_stack () : 'a stack = 
   empty 
-  |> push "51"
+  |> push "Computer"
   |> push "Science"
-  |> push "Computer" ;;
+  |> push "51" ;;
 
 (*......................................................................
 Exercise 4C: Write an expression to generate a stack with the
