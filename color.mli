@@ -1,6 +1,6 @@
 module type COLOR = 
   sig 
-    type color = int
+    type color = int * int * int
     type color_name =
     | Red
     | Green

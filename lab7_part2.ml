@@ -84,7 +84,7 @@ thereby naming the result `red_channel`.
 ......................................................................*)
 open Color ;;
 
-let red_channel = Color.red ;;
+let red_channel = red ;;
 
 (* Let's investigate one way that a signature can be useful. Although
 color.ml contains an implementation of a basic color module, the
